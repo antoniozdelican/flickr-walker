@@ -38,7 +38,21 @@
 		A979B8D2275512460032D070 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8D1275512460032D070 /* Codable.swift */; };
 		A979B8D4275513660032D070 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8D3275513660032D070 /* SearchResponse.swift */; };
 		A979B8DD27559B2A0032D070 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8DC27559B2A0032D070 /* ImageRequest.swift */; };
+		A9F23446275A6C5200825C22 /* FlickrWalkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F23445275A6C5200825C22 /* FlickrWalkerTests.swift */; };
+		A9F23451275A6D4F00825C22 /* ContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F23450275A6D4F00825C22 /* ContentViewModelTests.swift */; };
+		A9F23453275A6DF000825C22 /* MockFlickrAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F23452275A6DF000825C22 /* MockFlickrAPIManager.swift */; };
+		A9F23455275A6F5900825C22 /* MockEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F23454275A6F5900825C22 /* MockEntities.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9F23448275A6C5200825C22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A90CB3992750EF9A00F0DDB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A90CB3A02750EF9A00F0DDB4;
+			remoteInfo = FlickrWalker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A90CB3A12750EF9A00F0DDB4 /* FlickrWalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrWalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,10 +88,23 @@
 		A979B8D1275512460032D070 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		A979B8D3275513660032D070 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		A979B8DC27559B2A0032D070 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		A9F23443275A6C5200825C22 /* FlickrWalkerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrWalkerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9F23445275A6C5200825C22 /* FlickrWalkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrWalkerTests.swift; sourceTree = "<group>"; };
+		A9F23447275A6C5200825C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9F23450275A6D4F00825C22 /* ContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTests.swift; sourceTree = "<group>"; };
+		A9F23452275A6DF000825C22 /* MockFlickrAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlickrAPIManager.swift; sourceTree = "<group>"; };
+		A9F23454275A6F5900825C22 /* MockEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEntities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A90CB39E2750EF9A00F0DDB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9F23440275A6C5200825C22 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -91,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				A90CB3A32750EF9A00F0DDB4 /* FlickrWalker */,
+				A9F23444275A6C5200825C22 /* FlickrWalkerTests */,
 				A90CB3A22750EF9A00F0DDB4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				A90CB3A12750EF9A00F0DDB4 /* FlickrWalker.app */,
+				A9F23443275A6C5200825C22 /* FlickrWalkerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,6 +235,42 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		A9F23444275A6C5200825C22 /* FlickrWalkerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2344F275A6C8400825C22 /* Mocks */,
+				A9F2344D275A6C6A00825C22 /* ViewModels */,
+				A9F2344E275A6C7800825C22 /* Services */,
+				A9F23445275A6C5200825C22 /* FlickrWalkerTests.swift */,
+				A9F23447275A6C5200825C22 /* Info.plist */,
+			);
+			path = FlickrWalkerTests;
+			sourceTree = "<group>";
+		};
+		A9F2344D275A6C6A00825C22 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A9F23450275A6D4F00825C22 /* ContentViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A9F2344E275A6C7800825C22 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A9F2344F275A6C8400825C22 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A9F23454275A6F5900825C22 /* MockEntities.swift */,
+				A9F23452275A6DF000825C22 /* MockFlickrAPIManager.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,6 +291,24 @@
 			productReference = A90CB3A12750EF9A00F0DDB4 /* FlickrWalker.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A9F23442275A6C5200825C22 /* FlickrWalkerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9F2344C275A6C5200825C22 /* Build configuration list for PBXNativeTarget "FlickrWalkerTests" */;
+			buildPhases = (
+				A9F2343F275A6C5200825C22 /* Sources */,
+				A9F23440275A6C5200825C22 /* Frameworks */,
+				A9F23441275A6C5200825C22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9F23449275A6C5200825C22 /* PBXTargetDependency */,
+			);
+			name = FlickrWalkerTests;
+			productName = FlickrWalkerTests;
+			productReference = A9F23443275A6C5200825C22 /* FlickrWalkerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -237,6 +320,10 @@
 				TargetAttributes = {
 					A90CB3A02750EF9A00F0DDB4 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					A9F23442275A6C5200825C22 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = A90CB3A02750EF9A00F0DDB4;
 					};
 				};
 			};
@@ -254,6 +341,7 @@
 			projectRoot = "";
 			targets = (
 				A90CB3A02750EF9A00F0DDB4 /* FlickrWalker */,
+				A9F23442275A6C5200825C22 /* FlickrWalkerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -268,6 +356,13 @@
 				A90CB3AE2750EF9B00F0DDB4 /* Preview Assets.xcassets in Resources */,
 				A90CB3AB2750EF9B00F0DDB4 /* Assets.xcassets in Resources */,
 				A94E48EF27578C7D00D288DF /* Speed Maksimir Walk, Zagreb.gpx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9F23441275A6C5200825C22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +402,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9F2343F275A6C5200825C22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9F23455275A6F5900825C22 /* MockEntities.swift in Sources */,
+				A9F23453275A6DF000825C22 /* MockFlickrAPIManager.swift in Sources */,
+				A9F23451275A6D4F00825C22 /* ContentViewModelTests.swift in Sources */,
+				A9F23446275A6C5200825C22 /* FlickrWalkerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9F23449275A6C5200825C22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A90CB3A02750EF9A00F0DDB4 /* FlickrWalker */;
+			targetProxy = A9F23448275A6C5200825C22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A90CB3AF2750EF9B00F0DDB4 /* LaunchScreen.storyboard */ = {
@@ -479,6 +593,46 @@
 			};
 			name = Release;
 		};
+		A9F2344A275A6C5200825C22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EVVDW95JPN;
+				INFOPLIST_FILE = FlickrWalkerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.antoniozdelican.FlickrWalkerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlickrWalker.app/FlickrWalker";
+			};
+			name = Debug;
+		};
+		A9F2344B275A6C5200825C22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EVVDW95JPN;
+				INFOPLIST_FILE = FlickrWalkerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.antoniozdelican.FlickrWalkerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlickrWalker.app/FlickrWalker";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -496,6 +650,15 @@
 			buildConfigurations = (
 				A90CB3B62750EF9B00F0DDB4 /* Debug */,
 				A90CB3B72750EF9B00F0DDB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9F2344C275A6C5200825C22 /* Build configuration list for PBXNativeTarget "FlickrWalkerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9F2344A275A6C5200825C22 /* Debug */,
+				A9F2344B275A6C5200825C22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

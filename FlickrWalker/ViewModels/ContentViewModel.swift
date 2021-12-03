@@ -51,6 +51,7 @@ class ContentViewModel: NSObject, ObservableObject {
             switch result {
             case .success(let response):
                 self?.addPhoto(from: response)
+                print(response)
             case .failure(let error):
                 print(error.localizedDescription)
             }
