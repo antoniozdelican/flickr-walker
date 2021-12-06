@@ -17,3 +17,12 @@ class LocationManager: CLLocationManager {
         self.distanceFilter = 100
     }
 }
+
+//extension CLLocationManager: LocationManagerProtocol {
+//    
+//}
+//
+//protocol LocationManagerDelegate {
+//    func locationManager(_ manager: LocationManagerProtocol, didUpdateLocations locations: [CLLocation])
+//    func locationManager(_ manager: LocationManagerProtocol, didChangeAuthorization status: CLAuthorizationStatus)
+//}

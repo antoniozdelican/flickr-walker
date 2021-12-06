@@ -32,12 +32,13 @@ class ContentViewModel: NSObject, ObservableObject {
     
     init(
         flickrAPIManager: FlickrAPIManagerProtocol = FlickrAPIManager(),
-        imageCache: ImageCacheProtocol? = Environment(\.imageCache).wrappedValue
+        imageCache: ImageCacheProtocol? = Environment(\.imageCache).wrappedValue,
+        locationManager: LocationManager = LocationManager()
     ) {
         self.flickrAPIManager = flickrAPIManager
         self.imageCache = imageCache
         
-        self.locationManager = LocationManager()
+        self.locationManager = locationManager
         self.authorizationStatus = locationManager.authorizationStatus
         super.init()
         self.locationManager.delegate = self
@@ -51,7 +52,6 @@ class ContentViewModel: NSObject, ObservableObject {
             switch result {
             case .success(let response):
                 self?.addPhoto(from: response)
-                print(response)
             case .failure(let error):
                 print(error.localizedDescription)
             }

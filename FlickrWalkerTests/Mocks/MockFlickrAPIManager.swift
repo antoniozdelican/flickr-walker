@@ -12,16 +12,20 @@ class MockFlickrAPIManager: FlickrAPIManagerProtocol {
     
     var isSearchedCalled = false
     var isImageCalled = false
+    var searchRequest: SearchRequest!
+    var imageRequest: ImageRequest!
     var searchCompletion: ((Result<SearchResponse, Error>) -> Void)!
     var imageCompletion: ((Result<Data, Error>) -> Void)!
+    var imageCallCount = 0
     
     func search(_ request: SearchRequest, completion: @escaping (Result<SearchResponse, Error>) -> Void) {
+        searchRequest = request
         isSearchedCalled = true
         searchCompletion = completion
     }
     
-    func getSearchSuccess() {
-        searchCompletion(.success(mockSearchResponse))
+    func getSearchSuccess(searchResponse: SearchResponse = mockSearchResponse) {
+        searchCompletion(.success(searchResponse))
     }
     
     func getSearchError(error: Error) {
@@ -29,12 +33,14 @@ class MockFlickrAPIManager: FlickrAPIManagerProtocol {
     }
     
     func image(_ request: ImageRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+        imageRequest = request
         isImageCalled = true
         imageCompletion = completion
+        imageCallCount += 1
     }
     
-    func getImageSuccess() {
-        imageCompletion(.success(mockImageData))
+    func getImageSuccess(imageData: Data = mockImageOneData) {
+        imageCompletion(.success(imageData))
     }
     
     func getImageError(error: Error) {

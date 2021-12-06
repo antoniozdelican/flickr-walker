@@ -7,7 +7,22 @@
 
 import SwiftUI
 
-enum ImageLoadState {
+enum ImageLoadState: Equatable {
+    static func == (lhs: ImageLoadState, rhs: ImageLoadState) -> Bool {
+        switch (lhs, rhs) {
+        case (.loading, .loading):
+            return true
+        case (.empty, .empty):
+            return true
+        case (let .success(lhsImage), let .success(rhsImage)):
+            return lhsImage.pngData() == rhsImage.pngData()
+        case (let .error(lhsError), let .error(rhsError)):
+            return lhsError.localizedDescription == rhsError.localizedDescription
+        default:
+            return false
+        }
+    }
+    
     case loading, empty, success(uiImage: UIImage), error(error: Error)
 }
 
@@ -20,7 +35,8 @@ class ImageLoaderViewModel: ObservableObject {
     private var isLoading = false
 
     init(
-        imageRequest: ImageRequest, flickrAPIManager: FlickrAPIManagerProtocol = FlickrAPIManager(),
+        imageRequest: ImageRequest,
+        flickrAPIManager: FlickrAPIManagerProtocol = FlickrAPIManager(),
         imageCache: ImageCacheProtocol? = Environment(\.imageCache).wrappedValue
     ) {
         self.imageRequest = imageRequest
