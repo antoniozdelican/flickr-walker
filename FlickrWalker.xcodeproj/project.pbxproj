@@ -38,7 +38,6 @@
 		A979B8D2275512460032D070 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8D1275512460032D070 /* Codable.swift */; };
 		A979B8D4275513660032D070 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8D3275513660032D070 /* SearchResponse.swift */; };
 		A979B8DD27559B2A0032D070 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8DC27559B2A0032D070 /* ImageRequest.swift */; };
-		A98E4843275DDD8900BD533D /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E4842275DDD8900BD533D /* MockLocationManager.swift */; };
 		A98E4847275E19C200BD533D /* ImageLoaderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E4846275E19C200BD533D /* ImageLoaderViewModelTests.swift */; };
 		A9F23446275A6C5200825C22 /* FlickrWalkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F23445275A6C5200825C22 /* FlickrWalkerTests.swift */; };
 		A9F23451275A6D4F00825C22 /* ContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F23450275A6D4F00825C22 /* ContentViewModelTests.swift */; };
@@ -90,7 +89,6 @@
 		A979B8D1275512460032D070 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		A979B8D3275513660032D070 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		A979B8DC27559B2A0032D070 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
-		A98E4842275DDD8900BD533D /* MockLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
 		A98E4846275E19C200BD533D /* ImageLoaderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderViewModelTests.swift; sourceTree = "<group>"; };
 		A9F23443275A6C5200825C22 /* FlickrWalkerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrWalkerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F23445275A6C5200825C22 /* FlickrWalkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrWalkerTests.swift; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 			children = (
 				A9F23454275A6F5900825C22 /* MockEntities.swift */,
 				A9F23452275A6DF000825C22 /* MockFlickrAPIManager.swift */,
-				A98E4842275DDD8900BD533D /* MockLocationManager.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -412,7 +409,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A98E4843275DDD8900BD533D /* MockLocationManager.swift in Sources */,
 				A98E4847275E19C200BD533D /* ImageLoaderViewModelTests.swift in Sources */,
 				A9F23455275A6F5900825C22 /* MockEntities.swift in Sources */,
 				A9F23453275A6DF000825C22 /* MockFlickrAPIManager.swift in Sources */,

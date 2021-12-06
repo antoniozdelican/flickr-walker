@@ -14,13 +14,13 @@ class ContentViewModelTests: XCTestCase {
     var sut: ContentViewModel!
     var mockFlickrAPIManager: MockFlickrAPIManager!
     var mockImageCache: ImageCache!
-    var mockLocationManager: MockLocationManager!
+    var mockLocationManager: LocationManager!
     
     override func setUp() {
         super.setUp()
         mockFlickrAPIManager = MockFlickrAPIManager()
         mockImageCache = mockImageCacheData
-        mockLocationManager = MockLocationManager()
+        mockLocationManager = LocationManager()
         sut = ContentViewModel(flickrAPIManager: mockFlickrAPIManager, imageCache: mockImageCache, locationManager: mockLocationManager)
     }
     
