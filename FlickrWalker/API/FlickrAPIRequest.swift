@@ -1,5 +1,5 @@
 //
-//  FlickrAPI.swift
+//  FlickrAPIRequest.swift
 //  FlickrWalker
 //
 //  Created by Antonio Zdelican on 29.11.21.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum FlickrAPI: NetworkRequestProtocol {
+enum FlickrAPIRequest: NetworkRequestProtocol {
     case search(_ request: SearchRequest)
     case image(_ request: ImageRequest)
 }
 
-extension FlickrAPI {
+extension FlickrAPIRequest {
     
     var baseUrl: String {
         switch self {

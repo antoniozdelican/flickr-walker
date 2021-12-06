@@ -22,7 +22,7 @@ class FlickrAPIManager: FlickrAPIManagerProtocol, ObservableObject {
     }
     
     func search(_ request: SearchRequest, completion: @escaping (Result<SearchResponse, Error>) -> Void) {
-        let request = FlickrAPI.search(request)
+        let request = FlickrAPIRequest.search(request)
         let networkOperation = NetworkOperation(request)
         
         networkOperation.execute(in: networkManager) { result in
@@ -43,7 +43,7 @@ class FlickrAPIManager: FlickrAPIManagerProtocol, ObservableObject {
     }
     
     func image(_ request: ImageRequest, completion: @escaping (Result<Data, Error>) -> Void) {
-        let request = FlickrAPI.image(request)
+        let request = FlickrAPIRequest.image(request)
         let networkOperation = NetworkOperation(request)
         
         networkOperation.execute(in: networkManager) { result in
