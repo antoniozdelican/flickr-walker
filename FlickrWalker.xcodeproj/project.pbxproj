@@ -27,7 +27,6 @@
 		A94E490C275A156F00D288DF /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E490B275A156F00D288DF /* ContentViewModel.swift */; };
 		A94E490E275A40A000D288DF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E490D275A40A000D288DF /* LocationManager.swift */; };
 		A979B8BD2754D8AF0032D070 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8BC2754D8AF0032D070 /* NetworkManager.swift */; };
-		A979B8BF2754E8490032D070 /* FlickrRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8BE2754E8490032D070 /* FlickrRequest.swift */; };
 		A979B8C22754E9760032D070 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8C12754E9760032D070 /* NetworkOperation.swift */; };
 		A979B8C42754E9800032D070 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8C32754E9800032D070 /* NetworkRequest.swift */; };
 		A979B8C62754E98D0032D070 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979B8C52754E98D0032D070 /* NetworkSession.swift */; };
@@ -82,7 +81,6 @@
 		A94E490B275A156F00D288DF /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		A94E490D275A40A000D288DF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A979B8BC2754D8AF0032D070 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		A979B8BE2754E8490032D070 /* FlickrRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrRequest.swift; sourceTree = "<group>"; };
 		A979B8C12754E9760032D070 /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		A979B8C32754E9800032D070 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		A979B8C52754E98D0032D070 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				A979B8C02754E9550032D070 /* Network */,
 				A979B8D02755123C0032D070 /* Extensions */,
 				A94E490F275A54B800D288DF /* Utilities */,
-				A979B8BE2754E8490032D070 /* FlickrRequest.swift */,
 				A90CB3AA2750EF9B00F0DDB4 /* Assets.xcassets */,
 				A90CB3AF2750EF9B00F0DDB4 /* LaunchScreen.storyboard */,
 				A90CB3B22750EF9B00F0DDB4 /* Info.plist */,
@@ -410,7 +407,6 @@
 				A90CB3A52750EF9A00F0DDB4 /* AppDelegate.swift in Sources */,
 				A94E49052758F8F800D288DF /* ImageLoaderViewModel.swift in Sources */,
 				A90CB3A72750EF9A00F0DDB4 /* SceneDelegate.swift in Sources */,
-				A979B8BF2754E8490032D070 /* FlickrRequest.swift in Sources */,
 				A94E490727590D8B00D288DF /* ImageCache.swift in Sources */,
 				A94E48F92758BE6F00D288DF /* ErrorLocationView.swift in Sources */,
 				A979B8C62754E98D0032D070 /* NetworkSession.swift in Sources */,
