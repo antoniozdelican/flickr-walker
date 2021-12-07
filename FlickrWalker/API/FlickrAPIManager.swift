@@ -15,10 +15,10 @@ protocol FlickrAPIManagerProtocol {
 /// Initializes networkManager, api requests and executes all the api operations
 class FlickrAPIManager: FlickrAPIManagerProtocol, ObservableObject {
     
-    private let networkManager: NetworkManager
+    private let networkManager: NetworkManagerProtocol
 
-    init() {
-        self.networkManager = NetworkManager(networkSession: NetworkSession())
+    init(networkManager: NetworkManagerProtocol = NetworkManager()) {
+        self.networkManager = networkManager
     }
     
     func search(_ request: SearchRequest, completion: @escaping (Result<SearchResponse, Error>) -> Void) {

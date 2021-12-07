@@ -10,13 +10,6 @@ import XCTest
 
 class ImageLoaderViewModelTests: XCTestCase {
     
-//    @Published var imageLoadState: ImageLoadState = .loading
-//
-//    private let imageRequest: ImageRequest
-//    private let flickrAPIManager: FlickrAPIManagerProtocol
-//    private var imageCache: ImageCacheProtocol?
-//    private var isLoading = false
-    
     var sut: ImageLoaderViewModel!
     var mockFlickrAPIManager: MockFlickrAPIManager!
     var mockImageCache: ImageCache!

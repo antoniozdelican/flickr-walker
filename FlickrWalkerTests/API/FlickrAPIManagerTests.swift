@@ -6,30 +6,102 @@
 //
 
 import XCTest
+@testable import FlickrWalker
 
 class FlickrAPIManagerTests: XCTestCase {
     
-    // TODO: test api manager search and image methods with dependency injection
-    // TODO: add weak for strong reference in viewModels
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var sut: FlickrAPIManager!
+    var mockNetworkManager: MockNetworkManager!
+    
+    override func setUp() {
+        super.setUp()
+        mockNetworkManager = MockNetworkManager()
+        sut = FlickrAPIManager(networkManager: mockNetworkManager)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        sut = nil
+        mockNetworkManager = nil
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_search_withData_shouldReturnSuccess() {
+        var searchResponse: SearchResponse?
+        var errorMessage: String?
+        let expectation = XCTestExpectation(description: "Request succeeded")
+        let lat = 45.81958312506764
+        let lon = 16.01557795876301
+        let searchRequest = SearchRequest(lat: lat, lon: lon)
+        
+        sut.search(searchRequest) { response in
+            switch response {
+            case .success(let successResponse):
+                searchResponse = successResponse
+            case .failure(let error):
+                errorMessage = error.localizedDescription
+            }
+            expectation.fulfill()
         }
+        
+        mockNetworkManager.getExecuteJsonSuccess()
+        
+        XCTAssertNotNil(searchResponse)
+        XCTAssertEqual(searchResponse?.photos?.photo?.first?.id, "49159180388")
+        XCTAssertNil(errorMessage)
+        
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func test_search_withImageData_shouldReturnSuccess() {
+        var imageData: Data?
+        var errorMessage: String?
+        let expectation = XCTestExpectation(description: "Request succeeded")
+        let imageRequest = mockImageOneRequest
+        
+        sut.image(imageRequest) { response in
+            switch response {
+            case .success(let data):
+                imageData = data
+            case .failure(let error):
+                errorMessage = error.localizedDescription
+            }
+            expectation.fulfill()
+        }
+        
+        mockNetworkManager.getExecuteFileSuccess()
+        
+        XCTAssertNotNil(imageData)
+        XCTAssertEqual(imageData, mockImageOneData)
+        XCTAssertNil(errorMessage)
+        
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func test_search_withError_shouldReturnError() {
+        var searchResponse: SearchResponse?
+        var errorMessage: String?
+        let expectation = XCTestExpectation(description: "Request errored")
+        let lat = 45.81958312506764
+        let lon = 16.01557795876301
+        let searchRequest = SearchRequest(lat: lat, lon: lon)
+        
+        sut.search(searchRequest) { response in
+            switch response {
+            case .success(let successResponse):
+                searchResponse = successResponse
+            case .failure(let error):
+                errorMessage = error.localizedDescription
+            }
+            expectation.fulfill()
+        }
+        
+        mockNetworkManager.getExecuteError(operationResult: OperationResult.error(NetworkError.invalidResponse, nil))
+        
+        XCTAssertNil(searchResponse)
+        XCTAssertNotNil(errorMessage)
+        XCTAssertEqual(errorMessage, "Invalid response error")
+        
+        wait(for: [expectation], timeout: 10.0)
     }
 
 }
